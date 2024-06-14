@@ -33,7 +33,7 @@ class SwapiClient {
     while (nextPage) {
       try {
         const response: axios.AxiosResponse = await axios.get(nextPage);
-        const results: Character = response.data.results; // Why can we just jump to response.data.results when data is type Any?
+        const results: Character = response.data.results;
         characters = characters.concat(results);
         nextPage = response.data.next;
       } catch (error) {
